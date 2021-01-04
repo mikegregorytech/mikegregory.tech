@@ -1,0 +1,379 @@
+/* Import fonts */
+@import url(//fonts.googleapis.com/css?family=Source+Serif+Pro);
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(//fonts.googleapis.com/css?family=Source+Code+Pro);
+
+/* Element reference - https://developer.mozilla.org/en-US/docs/Web/HTML/Element */
+
+/* Main root */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: thin; /* ff only */
+  scrollbar-color: grey transparent; /* ff only */
+}
+html::-webkit-scrollbar { /* edge + chrome + safari */
+  width: 8px;
+}
+html::-webkit-scrollbar-thumb { /* edge + chrome + safari */
+  background: grey;
+}
+html::-webkit-scrollbar-track { /* edge + chrome + safari */
+  background: transparent;
+}
+
+/* Document metadata
+base {}
+head {}
+link {}
+meta {}
+style {}
+title {} */
+
+/* Sectioning root */
+body {
+  font: 1em/1.5 'Source Serif Pro';
+  padding: 1rem;
+}
+
+/* Content sectioning
+address {}
+header {}
+hgroup {}
+nav {}
+section {} */
+main {
+  margin: auto;
+  max-width: 32rem; /* trying to stay under 80 characters per line */
+  position: relative;
+}
+#top {
+  position: relative;
+  top: -8px;
+}
+article {
+  margin-bottom: 6rem;
+  transition: margin-top 1s;
+}
+article > p:last-of-type::after {
+  content: '\2766'; /* this guy's called a fleuron */
+}
+aside {
+  font-family: 'Source Sans Pro';
+  font-size: .875em;
+  font-style: italic;
+  margin: 1rem;
+  transition: margin-left 1s;
+}
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.25em;
+}
+h3 {
+  font-size: 1em;
+}
+h4 {
+  font-size: 0.875em;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+h5 {
+  font-size: 0.875em;
+}
+h6 {
+  font-size: 0.875em;
+  font-style: italic;
+  letter-spacing: 0.125em;
+}
+h1, h2, h3, h4, h5, h6 { /* tweaked for accurate scrolling to anchored headings */
+  margin: -1rem 0 1rem 0;
+  padding-top: 1rem;
+}
+.heading {
+  font-family: 'Source Serif Pro';
+  font-weight: bold;
+}
+h4 > .heading {
+  font-family: 'Source Sans Pro';
+  font-weight: 900;
+}
+h5 > .heading {
+  font-family: 'Source Code Pro';
+}
+.heading::before {
+  color: lightgrey;
+  content: '# ';
+  font-weight: normal;
+  margin-left: -0.75em;
+}
+.heading:link,
+.heading:visited {
+  color: black;
+}
+#back-to-top:link,
+#back-to-top:visited,
+.heading:focus:before {
+  color: grey;
+}
+.heading:focus {
+  color: grey;
+  outline: 1px auto;
+  outline-offset: 3px;
+}
+h4 > .heading::before,
+h4 > .heading:focus:before {
+  margin-left: -0.875em;
+}
+h5 > .heading::before,
+h5 > .heading:focus:before,
+h6 > .heading::before,
+h6 > .heading:focus:before {
+  margin-left: -1.125em;
+}
+.heading:hover,
+.heading:hover:before {
+  color: grey;
+  text-decoration: none;
+  transition: color .25s;
+}
+.heading:active,
+#back-to-top:active {
+  color: black;
+}
+footer {
+  align-items: center;
+  background-color: white;
+  bottom: 0;
+  box-shadow: 0 -1rem 1rem -1rem rgba(0, 0, 0, .25);
+  display: flex;
+  height: 2.5rem;
+  left: 0;
+  line-height: 1.1;
+  padding: 1rem 0;
+  position: fixed;
+  white-space: nowrap;
+  width: 100%;
+}
+footer > a {
+  margin: 0 0.5rem;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  visibility: hidden;
+  width: 25%;
+}
+footer > a:focus {
+  outline-offset: 3px;
+}
+footer > a:hover {
+  text-decoration: none;
+}
+footer > a > span:hover {
+  text-decoration: underline;
+}
+#back-to-top {
+  transition: opacity 1s;
+}
+#previous-page::before {
+  content: '⇦ ';
+}
+#parent-section::before {
+  content: '⇧ ';
+}
+#next-page::before {
+  content: '⇨ ';
+}
+#previous-page::after {
+  content: '\a Previous page';
+  font-size: 0.875em;
+}
+#parent-section::after {
+  content: '\a Parent section';
+  font-size: 0.875em;
+}
+#next-page::after {
+  content: '\a Next page';
+  font-size: 0.875em;
+}
+#previous-page::before,
+#parent-section::before,
+#next-page::before,
+#previous-page::after,
+#parent-section::after,
+#next-page::after {
+  color: grey;
+  font-weight: normal;
+  white-space: pre;
+}
+
+/* Text content
+blockquote {}
+dd {}
+div {}
+dl {}
+dt {}
+figcaption {}
+figure {}
+hr {}
+li {}
+ol {}
+p {}
+pre {}
+ul {} */
+
+/* Inline text semantics
+abbr {}
+b {}
+bdi {}
+bdo {}
+br {}
+cite {}
+code {}
+data {}
+dfn {}
+em {}
+i {}
+kbd {}
+mark {}
+q {}
+rb {}
+rp {}
+rt {}
+rtc {}
+ruby {}
+s {}
+samp {}
+small {}
+span {}
+strong {}
+sub {}
+sup {}
+time {}
+u {}
+var {}
+wbr {} */
+a,
+#back-to-top {
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+  text-decoration-color: transparent;
+}
+a:focus {
+  outline: 1px auto;
+  outline-offset: 2px;
+}
+a:hover {
+  text-decoration-color: currentColor;
+  transition: text-decoration .5s;
+}
+
+/* Image and multimedia
+area {}
+audio {}
+img {}
+map {}
+track {}
+video {} */
+
+/* Embedded content
+embed {}
+iframe {}
+object {}
+param {}
+picture {}
+source {} */
+
+/* SVG and MathML
+svg {}
+math {} */
+
+/* Scripting
+canvas {}
+noscript {}
+script {} */
+
+/* Demarcating edits
+del {}
+ins {} */
+
+/* Table content
+caption {}
+col {}
+colgroup {}
+table {}
+tbody {}
+td {}
+tfoot {}
+th {}
+thead {}
+tr {} */
+
+/* Forms
+button {}
+datalist {}
+fieldset {}
+form {}
+input {}
+label {}
+legend {}
+meter {}
+optgroup {}
+option {}
+output {}
+progress {}
+select {}
+textarea {} */
+
+/* Interactive elements
+details {}
+dialog {}
+menu {}
+summary {} */
+
+/* Web Components
+slot {}
+template{} */
+
+/* Media query for "wide" screens
+ * Assumes 16px = 1rem
+ * Accounts for margins + sidebar + margins + main column + margins + scrollbar */
+@media (min-width: 753px) {
+  main {
+    max-width: 42rem;
+    width: 42rem;
+  }
+  #top {
+    top: -104px;
+  }
+  article {
+    margin-left: 10rem;
+    margin-top: 6rem;
+    width: 32rem;
+  }
+  aside {
+    position: absolute;
+    left: 0;
+    margin: 0 2rem 0 0;
+    text-align: right;
+    width: 8rem;
+  }
+  footer {
+    left: inherit;
+    margin: 0 -2rem;
+    max-width: 46rem;
+    width: 46rem;
+  }
+}
+
+@supports (hyphens: auto) {
+  main {
+    hyphens: auto;
+    text-align: justify;
+  }
+  article > p:last-of-type::after {
+    position: absolute;
+    right: 0;
+  }
+}
